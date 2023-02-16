@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        nav {
+            position: fixed;
+            top: 0;
+            z-index: 99;
+        }
+        .navbar{
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .carousel-inner {
+            background-image: url(images/banner-bg.png);
+            background-position: center;
+            background-size: cover;
+            height: 500px;
+        }
+
+        .carousel-item h1 {
+            width: fit-content;
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: auto;
+            margin-top: 100px;
+            color: white;
+        }
+
+        .show {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        /*  */
+        .pro {
+            width: 250px;
+            height: 450px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 1px 1px 10px rgb(144, 144, 144);
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            transition: all linear .2s;
+            border: 1px solid rgb(226, 172, 37);
+        }
+
+        .pro:hover {
+            transform: scale(1.05, 1.05);
+        }
+
+        .pro * {
+            margin: 0;
+        }
+
+        .proprice {
+            font-size: 20px;
+
+        }
+
+        .protitle {
+            font-size: 15px;
+        }
+
+        .divofimgpro {
+            width: 100%;
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .proimg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        /*  */
+
+        /*  */
+        b {
+            text-transform: capitalize;
+        }
+
+        .procartspace12 {
+            display: flex;
+            /* flex-direction: column; */
+            width: 90%;
+            height: 150px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            margin: 5px;
+            margin: auto;
+            font-size: small;
+        }
+
+        .propricecart12 {
+            font-size: small;
+
+        }
+
+        .proDescart12 {
+            font-size: small;
+            width: 100%;
+            height: 100px;
+            text-overflow: ellipsis;
+            overflow-wrap: break-word;
+            white-space: pre-line;
+        }
+
+        .proprice12 {
+            font-size: small;
+
+
+        }
+
+        .divofimgprocart12 {
+            width: 30%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .proimgcart12 {
+
+            max-width: 80%;
+            max-height: 90%;
+        }
+
+        .procaldiv12 {
+            padding: 5px;
+            width: 70%;
+        }
+
+        .procal12init {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-evenly;
+        }
+
+        .procal12init button {
+            font-size: small;
+            padding: 5px;
+            height: fit-content;
+            width: fit-content;
+        }
+
+        .procalbutaddrem {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .procalbutaddrem button {
+            font-size: small;
+            padding: 5px;
+            height: fit-content;
+            width: fit-content;
+        }
+
+        .procal12 {
+            width: 50%;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .shownumofpro2 {
+            width: 50%;
+            height: auto;
+            border: 1px solid rgb(226, 172, 37);
+            color: black;
+            margin: 0;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 1px 1px 5px black;
+            text-align: center;
+        }
+
+
+        .procartspace1 {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            height: fit-content;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            margin: 5px;
+            margin: auto;
+        }
+
+        .propricecart1 {
+            font-size: 20px;
+
+        }
+
+        .protitlecart1 {
+            font-size: 15px;
+        }
+
+        .divofimgprocart1 {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .proimgcart1 {
+            max-width: 100%;
+            max-height: 200px;
+        }
+
+        .procaldiv1 {
+            padding: 5px;
+            width: 100%;
+        }
+
+        .procal1 {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+
+        /*  */
+
+
+
+
+
+        .cartlast{
+            
+            padding: 5px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            color: white;
+        }
+
+
+
+        .productsheadtitle {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            width: fit-content;
+            color: rgb(226, 172, 37);
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .tyytty {
+            /* background-color: yellow; */
+            color: rgb(255, 208, 0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <button onclick="allitem()" type="button" class="m-2 navbar-brand btn btn-outline-light">Home</button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <button onclick="men()" type="button" class="m-2 dropdown-item btn btn-outline-light">Men's
+                                clothing
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button onclick="jew()" type="button"
+                                class="m-2 dropdown-item btn btn-outline-light">Jewelery</button>
+                        </li>
+                        <li class="nav-item">
+                            <button onclick="ele()" type="button"
+                                class="m-2 dropdown-item btn btn-outline-light">Electronics</button>
+                        </li>
+                        <li class="nav-item">
+                            <button onclick="wom()" type="button"
+                                class="m-2 dropdown-item btn btn-outline-light">Women's
+                                clothing</button>
+                        </li>
+                        <li class="nav-item">
+                            <button onclick="cartmodal()" class="btn btn-light" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop">
+                                <span class="material-symbols-outlined">
+                                    shopping_cart
+                                </span>
+                            </button>
+                        </li>
+
+
+                    </ul>
+                    <div class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" id="searchinput" placeholder="Search"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" onclick="searchbut()" type="submit"><span
+                                class="material-symbols-outlined">
+                                search
+                            </span></button>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <h1>
+                        GET START <br>
+                        YOUR FAVRIOT SHOPING
+                    </h1>
+                </div>
+                <div class="carousel-item">
+                    <h1>
+                        GET START <br>
+                        YOUR FAVRIOT SHOPING
+                    </h1>
+                </div>
+                <div class="carousel-item">
+                    <h1>
+                        GET START <br>
+                        YOUR FAVRIOT SHOPING
+                    </h1>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div>
+            <h2 id="productsheadtitle" class="productsheadtitle">
+                Deals Of The Day
+            </h2>
+            <div id="show" class="show">
+
+            </div>
+        </div>
+    </main>
+    
+    <button class="cartlast btn btn-warning" onclick="cartmodal()"  data-bs-toggle="modal"
+    data-bs-target="#staticBackdrop">
+        <span class="material-symbols-outlined">
+        shopping_cart
+    </span></button>
+
+
+    <!-- Modal -->
+    <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Items in cart</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="cartcontent">
+
+                </div>
+                <div class="modal-footer" id="checkoutspace">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade " id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="content">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+
+
+    let me = document.getElementById("show")
+    let porarray = []
+    fetch('https://fakestoreapi.com/products/')
+        .then(res => res.json())
+        .then(json => {
+            console.log(json);
+            porarray = json
+            for (let index = 0; index < json.length; index++) {
+                const element = json[index];
+
+                me.innerHTML += `<button class="pro" data-bs-toggle="modal" data-bs-target="#staticBackdrop2 "  onclick="content(${index})">
+                                    <div class="divofimgpro">
+                                        <img class="proimg" src="${element.image}" alt="">
+                                    </div>
+                                    <p class="protitle"><b>${element.title}</b></p>
+                                     <p class="proprice">$ ${element.price}</p>
+                                     <p class="proprice"><b>rating:</b> <span class="material-symbols-outlined  tyytty">star</span> ${element.rating.rate}</p>
+                                    
+                                </button>`
+
+            }
+
+        }
+        )
+
+
+    function allitem() {
+        document.getElementById("productsheadtitle").innerHTML = "All items"
+        console.log(porarray);
+        me.innerHTML = ""
+
+        for (let index = 0; index < porarray.length; index++) {
+            const element = porarray[index];
+
+            me.innerHTML += `<button class="pro" data-bs-toggle="modal" data-bs-target="#staticBackdrop2 " onclick="content(${index})">
+                                    <div class="divofimgpro">
+                                        <img class="proimg" src="${element.image}" alt="">
+                                    </div>
+                                    <p class="protitle"><b>${element.title}</b></p>
+                                     <p class="proprice">$ ${element.price}</p>
+                                     <p class="proprice"><b>rating:</b> <span class="material-symbols-outlined  tyytty">star</span> ${element.rating.rate}</p>
+                                    
+                                </button>`
+        }
+
+    }
+    function men() {
+        document.getElementById("productsheadtitle").innerHTML = "Men's clothing"
+        console.log(porarray);
+        me.innerHTML = ""
+
+        for (let index = 0; index < porarray.length; index++) {
+            const element = porarray[index];
+
+            if (element.category != "men's clothing") {
+                continue
+            } else {
+                me.innerHTML += `<button class="pro" data-bs-toggle="modal" data-bs-target="#staticBackdrop2 " onclick="content(${index})">
+                                    <div class="divofimgpro">
+                                        <img class="proimg" src="${element.image}" alt="">
+                                    </div>
+                                    <p class="protitle"><b>${element.title}</b></p>
+                                     <p class="proprice">$ ${element.price}</p>
+                                     <p class="proprice"><b>rating:</b> <span class="material-symbols-outlined  tyytty">star</span> ${element.rating.rate}</p>
+                                    
+                                </button>`
+            }
+
+        }
+
+    }
+    function jew() {
+        document.getElementById("productsheadtitle").innerHTML = "Jewelery"
+
+        console.log(porarray);
+        me.innerHTML = ""
+
+        for (let index = 0; index < porarray.length; index++) {
+        const element = porarray[index];
+
+            if (element.category != "jewelery") {
+                continue
+            } else {
+                me.innerHTML += `<button class="pro" data-bs-toggle="modal" data-bs-target="#staticBackdrop2 " onclick="content(${index})">
+                                    <div class="divofimgpro">
+                                        <img class="proimg" src="${element.image}" alt="">
+                                    </div>
+                                    <p class="protitle"><b>${element.title}</b></p>
+                                     <p class="proprice">$ ${element.price}</p>
+                                     <p class="proprice"><b>rating:</b> <span class="material-symbols-outlined  tyytty">star</span> ${element.rating.rate}</p>
+                                    
+                                </button>`
+            }
+
+        }
+
+    }
+    function ele() {
+        document.getElementById("productsheadtitle").innerHTML = "Electronics"
+
+        console.log(porarray);
+        me.innerHTML = ""
+
+        for (let index = 0; index < porarray.length; index++) {
+            const element = porarray[index];
+
+            if (element.category != "electronics") {
+                continue
+            } else {
+                me.innerHTML += `<button class="pro" data-bs-toggle="modal" data-bs-target="#staticBackdrop2 " onclick="content(${index})">
+                                    <div class="divofimgpro">
+                                        <img class="proimg" src="${element.image}" alt="">
+                                    </div>
+                                    <p class="protitle"><b>${element.title}</b></p>
+                                     <p class="proprice">$ ${element.price}</p>
+                                     <p class="proprice"><b>rating:</b> <span class="material-symbols-outlined  tyytty">star</span> ${element.rating.rate}</p>
+                                    
+                                </button>`
+            }
+
+        }
+
+    }
+    function wom() {
+        document.getElementById("productsheadtitle").innerHTML = "Women's clothing"
+
+        console.log(porarray);
+        me.innerHTML = ""
+
+        for (let index = 0; index < porarray.length; index++) {
+            const element = porarray[index];
+
+            if (element.category != "women's clothing") {
+                continue
+            } else {
+                me.innerHTML += `<button class="pro" data-bs-toggle="modal" data-bs-target="#staticBackdrop2 " onclick="content(${index})">
+                                    <div class="divofimgpro">
+                                        <img class="proimg" src="${element.image}" alt="">
+                                    </div>
+                                    <p class="protitle"><b>${element.title}</b></p>
+                                     <p class="proprice">$ ${element.price}</p>
+                                     <p class="proprice"><b>rating:</b> <span class="material-symbols-outlined  tyytty">star</span> ${element.rating.rate}</p>
+                                    
+                                </button>`
+
+            }
+
+        }
+
+    }
+    function searchbut() {
+        document.getElementById("productsheadtitle").innerHTML = "related items";
+        me.innerHTML = "";
+        let searchInput = document.getElementById("searchinput").value;
+        let searched = porarray.filter(item => item.category.includes(searchInput) || item.description.includes(searchInput));
+
+        for (let index = 0; index < porarray.length; index++) {
+            const element = porarray[index];
+            if (searched.includes(element)) {
+                me.innerHTML += `<button class="pro" data-bs-toggle="modal" data-bs-target="#staticBackdrop2 " onclick="content(${index})">
+                        <div class="divofimgpro">
+                            <img class="proimg" src="${element.image}" alt="">
+                        </div>
+                        <p class="protitle"><b>${element.title}</b></p>
+                         <p class="proprice">$ ${element.price}</p>
+                         <p class="proprice"><b>rating:</b> <span class="material-symbols-outlined  tyytty">star</span> ${element.rating.rate}</p>
+                    </button>`;
+            }
+        }
+    }
+
+
+
+    function content(i) {
+        document.getElementById("content").innerHTML = `  <div class="procartspace1">
+                                                         <div class="divofimgprocart1">
+                                                            <img class="proimgcart1" src="${porarray[i].image}" alt="">
+                                                        </div>
+                                                        <div class="procaldiv1">
+                                                            <p class="protitlecart1"><b>${porarray[i].title}</b></p>
+                                                            <p class="propricecart1"><b>Description:</b> ${porarray[i].description}</p>
+                                                            <p class="propricecart1"><b>Price:</b> $ ${porarray[i].price}</p>
+                                                            <p class="proprice"><b>rating:</b> <span class="material-symbols-outlined  tyytty">star</span> ${porarray[i].rating.rate}</p>
+                                                            <button type="button" data-bs-dismiss="modal" onclick="addot(${i})" class="probuy btn btn-warning">add to cart</button>
+                                                        </div>
+                                                    </div> 
+                                                </div>`
+
+    }
+
+    function cartmodal() {
+        console.log();
+        if (cartarray.length == 0) {
+            document.getElementById("cartcontent").innerHTML = `<b>NO ITEM IN CART</b>`
+        } else {
+            document.getElementById("checkoutspace").innerHTML = "but"
+            console.log(cartarray);
+            document.getElementById("cartcontent").innerHTML = ""
+            for (let index = 0; index < cartarray.length; index++) {
+                const element = cartarray[index];
+                document.getElementById("cartcontent").innerHTML += `  <div class="procartspace12">
+                                                         <div class="divofimgprocart12">
+                                                            <img class="proimgcart12" src="${element.image}" alt="">
+                                                        </div>
+                                                        <div class="procaldiv12">
+                                                            <p class="protitlecart12"><b>${element.title}</b></p>
+                                                            <p class="propricecart12">
+                                                                <b>Price:</b> $ ${element.price} &nbsp&nbsp
+                                                            <b>rating:</b> <span class="material-symbols-outlined  tyytty">star</span> ${element.rating.rate}
+                                                            </p>
+                                                            <div class="procal12init" >
+                                                                <div class="procalbutaddrem">
+                                                                     <button class="btn btn-primary" onclick="addtopro(${index})">+</button>
+                                                                        <p class="shownumofpro2" id="${index}">0</p>
+                                                                    <button class="btn btn-primary" onclick="removefrompro(${index})">-</button>
+                                                                </div>
+                                                                <button class="btn btn-warning" onclick="removefromcart(${index})">remove</button>
+                                                            </div>
+                                                        </div>
+                                                    </div> 
+                                                </div><hr>`
+
+            }
+        }
+    }
+    let cartarray = []
+
+    function addot(index) {
+
+        let checkcart = cartarray.find((productid) => productid.id == porarray[index].id)
+        if (checkcart) {
+            alert("item already in cart")
+        } else {
+            cartarray.push(porarray[index])
+            console.log(cartarray);
+        }
+    }
+    function removefromcart(index) {
+
+        cartarray.splice(index, 1)
+        console.log();
+        if (cartarray.length == 0) {
+            document.getElementById("cartcontent").innerHTML = `<b>NO ITEM IN CART</b>`
+        } else {
+            console.log(cartarray);
+            document.getElementById("cartcontent").innerHTML = ""
+            for (let index = 0; index < cartarray.length; index++) {
+                const element = cartarray[index];
+                document.getElementById("cartcontent").innerHTML += `  <div class="procartspace12">
+                                                         <div class="divofimgprocart12">
+                                                            <img class="proimgcart12" src="${element.image}" alt="">
+                                                        </div>
+                                                        <div class="procaldiv12">
+                                                            <p class="protitlecart12"><b>${element.title}</b></p>
+                                                            <p class="propricecart12">
+                                                                <b>Price:</b> $ ${element.price} &nbsp&nbsp
+                                                            <b>rating:</b> <span class="material-symbols-outlined  tyytty">star</span> ${element.rating.rate}
+                                                            </p>
+                                                            <div class="procal12init" >
+                                                                <div class="procalbutaddrem">
+                                                                     <button class="btn btn-primary" onclick="addtopro(${index})">+</button>
+                                                                        <p class="shownumofpro2" id="${index}">0</p>
+                                                                    <button class="btn btn-primary" onclick="removefrompro(${index})">-</button>
+                                                                </div>
+                                                                <button class="btn btn-warning" onclick="removefromcart(${index})">remove</button>
+                                                            </div>
+                                                        </div>
+                                                    </div> 
+                                                </div><hr>`
+
+            }
+        }
+    }
+
+//     let counts = []
+
+//     function addtopro(i) {
+//         // if (!(i in counts)) {
+//         //     counts[i] = 0
+
+//         // }
+//         // counts[i]++
+//         // let totalprice = cartarray[i].price * counts[i]
+//         // document.getElementById(i).innerHTML = counts[i]
+//         // console.log(counts);
+// console.log(cartarray[i].id);
+// console.log(cartarray[i].price);
+// counts.push(
+//     {id:cartarray[i].id,
+//      price:cartarray[i].price
+//     }
+// )
+// console.log(counts);
+//     }
+
+//     function removefrompro(i) {
+//         if (i in counts) {
+//             counts[i]--
+//             document.getElementById(i).innerHTML = counts[i]
+//         }
+//         console.log(counts);
+//         let totalprice = cartarray[i].price * counts[i]
+
+//     }
+
+
+
+</script>
