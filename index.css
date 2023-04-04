@@ -10,6 +10,12 @@
             top: 0;
             width: 100%;
         }
+        .nameofweb{
+            color: rgb(255, 208, 0);
+            /* font-size: larger; */
+            font-weight: bolder;
+            margin-top: 0;
+        }
 
         .carousel-inner {
             background-image: url(images/banner-bg.png);
@@ -287,3 +293,67 @@
         .checkouttotal {
             padding: 10px;
         }
+
+        footer {
+            background-color: rgb(226, 172, 37);
+            padding: 40px 0;
+            color: white;
+            font-size: 14px;
+          }
+          
+          .container {
+            max-width: 960px;
+            margin: 0 auto;
+          }
+          
+          .row {
+            display: flex;
+            flex-wrap: wrap;
+          }
+          
+          .col-md-4 {
+            flex: 1;
+            padding: 0 15px;
+            text-align: center;
+          }
+          
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
+          
+          ul li {
+            margin-bottom: 10px;
+          }
+          
+          ul li a {
+            color: whitesmoke;
+            text-decoration: none;
+          }
+          
+          form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+          }
+          
+          form button[type="submit"] {
+            background-color: white;
+            color: rgb(255, 208, 0);
+            border: none;
+            border-radius: 3px;
+            padding: 10px 15px;
+            cursor: pointer;
+          }
+          
+          hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+          }
+          .col-md-4{
+            text-align: left;
+          }

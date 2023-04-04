@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap.min.css">
+  <script src="bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+  <title>Document</title>
+  <style>
+    label {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+
+    }
+
+    .carrrrr {
+      max-width: 700px;
+      margin: auto;
+      border: none;
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: rgb(255, 208, 0);
+      font-size: 15px;
+    }
+
+    .card-body label {
+      margin: 10px;
+
+    }
+
+    .card-body label input {
+      border: 2px solid rgb(255, 208, 0);
+      border-radius: 10px;
+      outline: none;
+      padding: 10px;
+    }
+
+    .card-body button {
+      border: 2px solid rgb(255, 208, 0);
+      border-radius: 10px;
+      outline: none;
+      padding: 10px 20px;
+      background-color: white;
+      color: rgb(255, 208, 0);
+      font-weight: bolder;
+      text-transform: capitalize;
+      margin: 10px;
+
+    }
+
+    .card-body button:hover {
+      background-color: rgb(255, 208, 0);
+      color: white;
+
+    }
+
+    .card-img-top {
+      height: 300px;
+      background-image: url(images/banner-bg.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-img-top div {
+      text-align: center;
+    }
+
+    .card-img-top div span {
+      color: white;
+      font-size: 100px;
+    }
+
+    .card-img-top div p {
+      color: white;
+      font-size: 30px;
+      text-transform: capitalize;
+    }
+
+    main {
+      margin-top: 150px;
+
+    }
+
+    body {
+      background-color: rgb(255, 229, 114);
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <main>
+    <div class="card mb-3 carrrrr">
+      <div class="card-img-top">
+        <div>
+          <span>
+            JIJA
+          </span>
+          <p>order with us</p>
+        </div>
+
+
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">Login</h2>
+        <label for="email">
+          Email
+          <input type="email" id="email">
+        </label>
+        <label for="password">
+          Password
+          <input type="password" id="password">
+        </label>
+        <div>
+          <button onclick="login()">
+            login
+          </button>
+          <button onclick="sub()">
+            Sign up
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
+
+<script>
+
+  localStorage.setItem('ecooomuser', JSON.stringify(null))
+
+  let email = document.getElementById("email")
+  let password = document.getElementById("password")
+
+  let ecomuser = JSON.parse(localStorage.getItem("ecomuser"))
+  console.log(ecomuser);
+
+
+
+  function login() {
+
+    if (email.value == "" || password.value == "") {
+      alert("enter details")
+    }
+    else if (ecomuser == null || ecomuser == []) {
+      alert("User not found")
+    }
+
+    else {
+
+
+      let found = ecomuser.find((current) => current.email == email.value && current.password == password.value);
+
+
+
+      if (found) {
+        console.log(found)
+        localStorage.setItem('ecooomuser', JSON.stringify(found))
+
+
+        window.location.href = "dashbord.html"
+        alert("Login Successful")
+      } else {
+        alert("User not found")
+      }
+
+
+    }
+    password.value = ""
+  }
+  function sub() {
+    window.location.href = "index.html"
+  }
+
+
+</script>
